@@ -1,12 +1,37 @@
 <ion-header>
-  <ion-navbar>
-    <ion-title>Home</ion-title>
+  <ion-navbar transparent>
+    <ion-title>Upcoming events</ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only>
+        <ion-icon name="heart-outline"></ion-icon>
+      </button>
+    </ion-buttons>
   </ion-navbar>
 </ion-header>
 
-<ion-content padding>
-  <h2>Welcome to Ionic!</h2>
-  <p>
-    Take a look at <code>app.scss</code> where the css stuff for the icons is.
-  </p>
+<ion-content fullscreen>
+  <ion-card>
+    <div class="the-header">
+      <div class="header-text">
+        <h1>Kanye West</h1>
+        <p>yeezy world tour 2017</p>
+      </div>
+      <div class="background">
+        <img src="assets/img/kanye_west.png"/>
+      </div>
+      <button ion-fab>
+        <ion-icon name="icon-fire"></ion-icon>
+      </button>
+    </div>
+    <div class="the-content" padding>
+      <h2>POWER PASS</h2>
+      <div padding>
+          <small>Blalba lorem ipsum lambda lambda lorem ipsum lambda lambda lorem ipsum lambda lambda lorem ipsum lambda lambda
+            lorem ipsum lambda lambda lorem ipsum lambda lambda lorem ipsum lambda lambda
+          </small>
+      </div>
+      <p>I want 2 passes</p>
+      <button ion-button block>Purchase</button>
+    </div>
+  </ion-card>
 </ion-content>

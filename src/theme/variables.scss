@@ -24,7 +24,7 @@ $font-path: "../assets/fonts";
 // The "primary" color is the only required color in the map.
 
 $colors: (
-  primary:    #488aff,
+  primary:    #ffee02,
   secondary:  #32db64,
   danger:     #f53d3d,
   light:      #f4f4f4,
@@ -68,11 +68,106 @@ $colors: (
 // The premium icon font for Ionic. For more info, please see:
 // http://ionicframework.com/docs/v2/ionicons/
 
-@import "ionic.ionicons";
+@import "ionicons";
 
+@font-face {
+  font-family: 'icomoon';
+  src:  url('../assets/fonts/icomoon.eot?b7f9xo');
+  src:  url('../assets/fonts/icomoon.eot?b7f9xo#iefix') format('embedded-opentype'),
+    url('../assets/fonts/icomoon.ttf?b7f9xo') format('truetype'),
+    url('../assets/fonts/icomoon.woff?b7f9xo') format('woff'),
+    url('../assets/fonts/icomoon.svg?b7f9xo#icomoon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+[class^="icon-"], [class*="icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'icomoon';
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-home:before {
+  content: "\e900";
+}
+.icon-headphones:before {
+  content: "\e910";
+}
+.icon-pacman:before {
+  content: "\e916";
+}
+.icon-gift:before {
+  content: "\e99f";
+}
+.icon-fire:before {
+  content: "\e9a9";
+}
+.icon-lab:before {
+  content: "\e9aa";
+}
+
+@mixin makeIcon($arg, $val) {
+  .ion-ios-#{$arg}:before ,
+  .ion-ios-#{$arg}-circle:before ,
+  .ion-ios-#{$arg}-circle-outline:before ,
+  .ion-ios-#{$arg}-outline:before ,
+  .ion-md-#{$arg}:before ,
+  .ion-md-#{$arg}-circle:before ,
+  .ion-md-#{$arg}-circle-outline:before ,
+  .ion-md-#{$arg}-outline:before  {
+    content: $val;
+    font-size: 26px;
+  }
+}
+
+@include makeIcon(icon-home, '\e900');
+@include makeIcon(icon-fire, '\e9a9');
+@include makeIcon(icon-pacman, '\e916');
+@include makeIcon(icon-headphones, '\e910');
+@include makeIcon(icon-gift, '\e99f');
+@include makeIcon(icon-lab, '\e9aa');
 
 // Fonts
 // --------------------------------------------------
 
 @import "roboto";
 @import "noto-sans";
+
+@font-face {
+  font-family: 'Mytupi';
+  src: url('../assets/fonts/yoxall__.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Mytupi';
+  src: url('../assets/fonts/yoxall_b.ttf') format('truetype');
+  font-weight: bold;
+  font-style: normal;
+}
+
+ion-content {
+  h1, h2, h3, p, small {
+    // font-family: 'Mytupi';
+  }
+}
+
+ion-tabs > div.tabbar.show-tabbar {
+  background: #222;
+  a.tab-button[aria-selected=true] .tab-button-icon {
+    color: white;
+  }
+  a.tab-button, a.tab-button ion-icon {
+    color : white;
+  }
+}
